@@ -1,30 +1,92 @@
 .home-container {
-    text-align: center;
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 600px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-  
-    h1 {
-      font-size: 2.5rem;
-      color: #3f51b5;
-    }
-  
-    .tagline {
-      font-size: 1.2rem;
-      color: #757575;
-      margin-bottom: 20px;
-    }
-  
-    .buttons {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+   
+    .top-border {
+      width: 100%;
+      height: 1.2in;
+      background-color: #67cf6b;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
+  
+      h1 {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-size: 2.5rem;
+        color: white;
+        text-transform: none;
+  
+        .welcome-text {
+          font-size: 2rem;
+          text-transform: lowercase;
+        }
+  
+        .trackify-text {
+          font-size: 3rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  
+    .introduction {
+        width: 50%;
+        height: 30%;
+        margin: 30px auto;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        font-family: 'BouncyBananas', cursive;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        overflow: auto; 
+      
+        p {
+          font-size: 1.2rem;
+          color: #333;
+          line-height: 2rem; 
+          margin: 0;  
+          word-wrap: break-word; 
+        }
+      }
+      
+  
+    .corner-buttons {
+      position: absolute;
+      width: 100%;
   
       button {
-        font-size: 1rem;
+        width: 2in;
+        height: 1in;
+        border-radius: 15px;
+        font-size: 1.5rem;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-weight: bold;
+        background-color: rgb(91, 91, 141);
+        color: white; 
+        border: none;
+        transition: background-color 0.3s ease;  
+      
+
+      &:hover {
+        background-color: darkblue;
       }
+    }
+  
+      .left-btn {
+        position: absolute;
+        top: 1in;
+        left: 10%;
+      }
+  
+      .right-btn {
+        position: absolute;
+        top: 1in;
+        right: 10%;
+      }
+  
     }
   }
   
