@@ -1,1 +1,29 @@
-<p>task-form works!</p>
+<div class="task-form-container">
+    <mat-toolbar color="primary">
+      <span>{{ isEdit ? 'Edit Task' : 'Add Task' }}</span>
+    </mat-toolbar>
+  
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="task.title" name="title" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="task.description" name="description" required></textarea>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Due Date</mat-label>
+        <input matInput [(ngModel)]="task.dueDate" name="dueDate" [matDatepicker]="picker" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-checkbox [(ngModel)]="task.completed" name="completed">Completed</mat-checkbox>
+  
+      <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Save' : 'Add' }} Task</button>
+    </form>
+  </div>
+  

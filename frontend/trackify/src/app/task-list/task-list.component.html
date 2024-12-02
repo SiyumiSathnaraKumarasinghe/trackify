@@ -1,1 +1,31 @@
-<p>task-list works!</p>
+<div class="task-list-container">
+    <mat-toolbar color="primary">
+      <span>Task List</span>
+      <span class="spacer"></span>
+      <button mat-button [routerLink]="'/task-form'">Add Task</button>
+    </mat-toolbar>
+  
+    <mat-table [dataSource]="tasks">
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let task"> {{ task.title }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="dueDate">
+        <mat-header-cell *matHeaderCellDef> Due Date </mat-header-cell>
+        <mat-cell *matCellDef="let task"> {{ task.dueDate | date: 'shortDate' }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let task">
+          <button mat-button (click)="editTask(task)">Edit</button>
+          <button mat-button color="warn" (click)="deleteTask(task._id)">Delete</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  

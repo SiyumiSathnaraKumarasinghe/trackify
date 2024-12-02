@@ -2,21 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// Define the Task interface for TypeScript type checking
-interface Task {
+// Define and export the Task interface for TypeScript type checking
+export interface Task {
   title: string;
   description: string;
   dueDate: string;
   completed: boolean;
-  _id?: string;
+  _id?: string; // Optional ID field
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-
-  // Backend URL for API calls (you can change this to match your backend URL)
+  // Backend URL for API calls (update this to match your backend URL)
   private apiUrl = 'http://localhost:5000/tasks';
 
   constructor(private http: HttpClient) { }
