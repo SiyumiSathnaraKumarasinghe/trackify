@@ -1,8 +1,10 @@
+// task.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// Define and export the Task interface for TypeScript type checking
+// Export Task interface so it can be used in other components
 export interface Task {
   title: string;
   description: string;
@@ -15,12 +17,11 @@ export interface Task {
   providedIn: 'root'
 })
 export class TaskService {
-  // Backend URL for API calls (update this to match your backend URL)
   private apiUrl = 'http://localhost:5000/tasks';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // Get all tasks from the backend API
+  // Get all tasks
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.apiUrl);
   }
@@ -30,12 +31,12 @@ export class TaskService {
     return this.http.post<Task>(this.apiUrl, task);
   }
 
-  // Update a task by its ID
+  // Update a task by ID
   updateTask(id: string, task: Task): Observable<Task> {
     return this.http.put<Task>(`${this.apiUrl}/${id}`, task);
   }
 
-  // Delete a task by its ID
+  // Delete a task by ID
   deleteTask(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }

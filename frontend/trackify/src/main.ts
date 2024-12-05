@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { provideRouter, RouterModule } from '@angular/router';
@@ -37,8 +37,9 @@ bootstrapApplication(AppComponent, {
       MatDatepickerModule,
       MatIconModule,
       MatCheckboxModule,
-      MatSnackBarModule
+      MatSnackBarModule,
+      HttpClientModule // Add HttpClientModule here
     ),
     provideRouter(routes), // Add routing providers here
   ]
-});
+});  

@@ -10,6 +10,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { TaskService } from '../task.service';
 import { Task } from '../task.service'; // Import Task interface
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 
 @Component({
   selector: 'app-task-form',
@@ -24,6 +25,7 @@ import { Task } from '../task.service'; // Import Task interface
     MatCheckboxModule,
     MatDatepickerModule,
     FormsModule,
+    HttpClientModule, // Add HttpClientModule here
   ],
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.scss'],
@@ -50,7 +52,7 @@ export class TaskFormComponent implements OnInit {
       this.taskService.getTasks().subscribe((tasks) => {
         const foundTask = tasks.find((t) => t._id === taskId);
         if (foundTask) {
-          this.task = { ...foundTask }; // Spread operator to safely assign properties
+          this.task = { ...foundTask };
         }
       });
     }

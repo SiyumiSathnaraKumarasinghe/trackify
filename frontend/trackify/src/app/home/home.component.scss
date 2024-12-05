@@ -6,7 +6,7 @@
     .top-border {
       width: 100%;
       height: 1.2in;
-      background-color: #67cf6b;
+      background-color: rgba(8, 52, 21, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -31,7 +31,7 @@
   
     .introduction {
         width: 50%;
-        height: 30%;
+        height: 35%;
         margin: 30px auto;
         text-align: center;
         background: rgba(255, 255, 255, 0.8);
@@ -64,27 +64,27 @@
         font-size: 1.5rem;
         font-family: 'Comic Sans MS', cursive, sans-serif;
         font-weight: bold;
-        background-color: rgb(91, 91, 141);
-        color: white; 
+        background-color: rgba(103, 223, 137, 0.7); /* Adding transparency with alpha value */
+        color: white;
         border: none;
-        transition: background-color 0.3s ease;  
+        transition: background-color 0.3s ease;
       
-
-      &:hover {
-        background-color: darkblue;
+        &:hover {
+          background-color: rgba(13, 149, 41, 0.7); /* Dark blue with transparency */
+        }
       }
-    }
+      
   
       .left-btn {
         position: absolute;
-        top: 1in;
-        left: 10%;
+        top: 0.5in;
+        left: 15%;
       }
   
       .right-btn {
         position: absolute;
-        top: 1in;
-        right: 10%;
+        top: 0.5in;
+        right: 15%;
       }
   
     }
